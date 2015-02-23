@@ -391,7 +391,9 @@
       this.focused = false;
       var val = this.$element.val();
       if (this.newOptionsAllowed) {
-    	  this.$target.val(val);
+      	  if (this.length === 0) {
+    	      this.$target.val(val);
+      	  }
       } else {
 	      if (!this.selected && val !== '' ) {
 	        this.$element.val('');
